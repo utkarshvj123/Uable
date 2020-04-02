@@ -4,12 +4,15 @@ import NavBar from "../../component/NavBar";
 import Progress from "./Progress";
 import Welcome from "../../component/Welcome";
 import UnFriends from "../../component/UnFriends";
+import { getTabData } from "./actions";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const Container = styled.div`
   background: #8080800f;
 `;
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,11 +23,17 @@ export default class Dashboard extends Component {
     };
   }
 
+
+
+  componentDidMount(){
+    this.props.getTabData();
+  }
+
   render() {
     const {
       progress: { progressPercentage, strokeWidth }
     } = this.state;
-
+console.log(this.props)
     return (
       <Container>
         <NavBar />
@@ -48,3 +57,21 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+
+function mapStateToProps(state) {
+  const {
+    dashBoard: { tabData }
+  } = state;
+  return {
+    tabData
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    ...bindActionCreators({ getTabData }, dispatch)
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

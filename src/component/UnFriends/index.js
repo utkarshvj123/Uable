@@ -15,7 +15,7 @@ export default class UnFriends extends Component {
                 <div><span className="header-icon mx-1"><i className="fa fa-user-o" aria-hidden="true"></i></span></div>
             </div>
             <div>
-                <a href="#" className="text-success">See All</a>
+                <a className="text-success">See All</a>
             </div>
         </div>
         );

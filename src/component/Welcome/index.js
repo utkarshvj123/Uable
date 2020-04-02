@@ -13,7 +13,7 @@ export default class Welcome extends Component {
                 You've learned <strong className="text-warning">60%</strong> of your work keep it up and improve your results
             </div>
             <div>
-                <a href="#" className="text-success">Complete Profile <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a className="text-success">Complete Profile <i className="fa fa-chevron-right" aria-hidden="true"></i></a>
             </div>
           </div>
         );

@@ -12,7 +12,7 @@ export default class ProgressBar extends Component {
   render() {
 
     console.log(this.props,"........props at ")
-    const {  strokeWidth, percentage,color } = this.props;
+    const {  strokeWidth } = this.props;
     const sqSize = this.props.sqSize;
 
     const radius = (this.props.sqSize - this.props.strokeWidth) / 2;

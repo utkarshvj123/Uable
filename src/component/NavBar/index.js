@@ -10,10 +10,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-`;
-
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
