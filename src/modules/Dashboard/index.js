@@ -7,6 +7,8 @@ import UnFriends from "../../component/UnFriends";
 import { getTabData } from "./actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import UnCompanion from "../../component/UnCompanion";
+import EventDashboard from "../../component/EventDashboard";
 
 const Container = styled.div`
   background: #8080800f;
@@ -48,7 +50,12 @@ class Dashboard extends Component {
             <div className="w-25">
               <UnFriends />
             </div>
+            <div className="w-25">
+              <UnCompanion />
+            </div>
           </div>
+          <EventDashboard/>
+
         </div>
       </Container>
     );

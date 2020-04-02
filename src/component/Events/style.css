@@ -1,0 +1,15 @@
+.content{
+    background: #c8e8d5;
+    border-radius: 20px; 
+}
+
+.link-btn{
+    border-radius: 20px;
+}
+
+.class-btn{
+    border-radius: 20px !important;
+    border-left: dashed !important;
+    border-right: dashed !important;
+    border-bottom: 2px solid !important;
+}
