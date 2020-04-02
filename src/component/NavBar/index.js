@@ -10,6 +10,10 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+`;
+
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +58,7 @@ export default class NavBar extends Component {
             <div className="d-flex flex-row">
               <div
                 style={{
-                  marginTop: "21px"
+                  "margin-top": "21px"
                 }}
               >
                 Uable
@@ -71,7 +75,7 @@ export default class NavBar extends Component {
                     padding: "1.5rem 2rem 1rem",
                     fontWeight: "500",
                     textTransform: "capitalize",
-                    height: "27px !important"
+                    height: "62px !important"
                   }}
                   tabCss={{
                     cursor: "pointer",
@@ -81,7 +85,7 @@ export default class NavBar extends Component {
                     padding: "1.5rem 2rem 1rem",
                     fontWeight: "500",
                     textTransform: "capitalize",
-                    height: "27px !important"
+                    height: "62px !important"
                   }}
                   switchTab={this.selectedTab}
                   activeSection={
@@ -89,9 +93,9 @@ export default class NavBar extends Component {
                   }
                 />
               </div>
-              <div className="d-flex flex-row"
+              <div className="d-flex justify-content-between flex-row"
                 style={{
-                  marginTop: "21px",width: "16%"
+                  "margin-top": "21px",width: "16%"
                 }}
               >
                 <div><span className="header_icon mr-4"><i className="fa fa-cog" aria-hidden="true"></i></span></div>
