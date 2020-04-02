@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.club-card{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+}
+.link-view{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hide-scrollbar{
+  height: 70px;
+}

@@ -9,9 +9,13 @@
 
 }
 
-.d-flex{
-    justify-content: space-between;
+.flex-row{
+    display: flex;
+    justify-content: space-around;
 }
+
+/* 
+ */
 
 
 .header_icon{

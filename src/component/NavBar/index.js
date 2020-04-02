@@ -10,10 +10,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-`;
-
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -93,7 +89,7 @@ export default class NavBar extends Component {
                   }
                 />
               </div>
-              <div className="d-flex justify-content-between flex-row"
+              <div className="d-flex flex-row"
                 style={{
                   "margin-top": "21px",width: "16%"
                 }}
