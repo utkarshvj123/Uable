@@ -15,6 +15,7 @@ const Container = styled.div`
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.props.getTabData();
     this.state = {
       progress: {
         progressPercentage: 60,
@@ -23,17 +24,13 @@ class Dashboard extends Component {
     };
   }
 
-
-
-  componentDidMount(){
-    this.props.getTabData();
-  }
+  componentDidMount() {}
 
   render() {
     const {
       progress: { progressPercentage, strokeWidth }
     } = this.state;
-console.log(this.props)
+    console.log(this.props);
     return (
       <Container>
         <NavBar />
@@ -49,7 +46,7 @@ console.log(this.props)
               <Welcome />
             </div>
             <div className="w-25">
-              <UnFriends/>
+              <UnFriends />
             </div>
           </div>
         </div>
@@ -58,13 +55,12 @@ console.log(this.props)
   }
 }
 
-
 function mapStateToProps(state) {
   const {
-    dashBoard: { tabData }
+    dashBoard: { navBarTabData }
   } = state;
   return {
-    tabData
+    navBarTabData
   };
 }
 

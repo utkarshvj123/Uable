@@ -1,7 +1,7 @@
 import {TAB_DATA } from '../../../modules/Dashboard/actions';
 
 const initialState = {
-	tabData: ''
+	navBarTabData: []
 };
 
 export const dashBoard= (state = initialState, action) => {
@@ -9,7 +9,7 @@ export const dashBoard= (state = initialState, action) => {
 		case TAB_DATA:
 			return {
 				...state,
-				tabData: action.payload
+				navBarTabData: action.payload
 			};
 		default:
 			return state;

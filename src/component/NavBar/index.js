@@ -3,47 +3,42 @@ import "./style.css";
 import styled from "styled-components";
 import TabHeaders from "../TabsHeaders";
 import { findValueWithIndex } from "../../constants/global_common_functions";
+import { getTabData } from "../../modules/Dashboard/actions";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const Container = styled.div`
   margin-left: 6%;
   margin-right: 6%;
   width: 100%;
 `;
-
-export default class NavBar extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabs: [
-        {
-          id: 1,
-          name: "Clasroom"
-        },
-        {
-          id: 2,
-          name: "Profile"
-        },
-        {
-          id: 3,
-          name: "Portfolio"
-        }
-      ],
+      tab: [],
       activeTabName: "",
       activeTabIndex: 0
     };
   }
 
-  componentDidMount() {
+  settingValue() {
     const tabName = findValueWithIndex(
-      this.state.tabs,
+      this.props.navBarTabData,
       this.state.activeTabIndex,
       "name"
     );
     this.setState({ activeTabName: tabName });
   }
 
+  async componentDidMount() {
+    if (this.props.navBarTabData.length > 0) {
+      await this.setState({ tab: this.props.navBarTabData });
+      this.settingValue();
+    }
+  }
+
   selectedTab = (index, value) => {
-    console.log(index, value, "........value");
     this.setState({ activeTabName: value.name, activeTabIndex: index });
   };
   render() {
@@ -52,15 +47,10 @@ export default class NavBar extends Component {
         <nav className="navbar navbar-light">
           <Container>
             <div className="d-flex flex-row">
-              <div
-                style={{marginTop: "21px"
-                }}
-              >
-                Uable
-              </div>
+              <div style={{ marginTop: "21px" }}>Uable</div>
               <div>
                 <TabHeaders
-                  sectionTabs={this.state.tabs}
+                  sectionTabs={this.state.tab}
                   mobileHeaderCss={{ fontWeight: 200 }}
                   mobileTabCss={{
                     cursor: "pointer",
@@ -88,13 +78,25 @@ export default class NavBar extends Component {
                   }
                 />
               </div>
-              <div className="d-flex justify-content-between flex-row"
-                style={{marginTop: "21px",width: "16%"
-                }}
+              <div
+                className="d-flex justify-content-between flex-row"
+                style={{ marginTop: "21px", width: "16%" }}
               >
-                <div><span className="header_icon mr-4"><i className="fa fa-cog" aria-hidden="true"></i></span></div>
-                <div><span className="header_icon mx-4"><i className="fa fa-bell-o" aria-hidden="true"></i></span></div>
-                <div><span className="header_icon mx-4"><i className="fa fa-user-o" aria-hidden="true"></i></span></div>
+                <div>
+                  <span className="header_icon mr-4">
+                    <i className="fa fa-cog" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div>
+                  <span className="header_icon mx-4">
+                    <i className="fa fa-bell-o" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div>
+                  <span className="header_icon mx-4">
+                    <i className="fa fa-user-o" aria-hidden="true"></i>
+                  </span>
+                </div>
               </div>
             </div>
           </Container>
@@ -103,3 +105,16 @@ export default class NavBar extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const {
+    dashBoard: { navBarTabData }
+  } = state;
+  return {
+    navBarTabData
+  };
+}
+
+export default connect(mapStateToProps, null)(NavBar);
+
+
