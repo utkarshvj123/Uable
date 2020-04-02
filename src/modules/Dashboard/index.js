@@ -9,8 +9,10 @@ const Container = styled.div`
 
 export default class Dashboard extends Component {
   render() {
-    return <Container>
+    return (
+      <Container>
         <NavBar />
-    </Container>;
+      </Container>
+    );
   }
 }

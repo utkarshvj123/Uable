@@ -54,7 +54,7 @@ export default class NavBar extends Component {
             <div className="d-flex flex-row">
               <div
                 style={{
-                  "margin-top": "21px"
+                  marginTop: "21px"
                 }}
               >
                 Uable
@@ -71,7 +71,7 @@ export default class NavBar extends Component {
                     padding: "1.5rem 2rem 1rem",
                     fontWeight: "500",
                     textTransform: "capitalize",
-                    height: "62px !important"
+                    height: "27px !important"
                   }}
                   tabCss={{
                     cursor: "pointer",
@@ -81,7 +81,7 @@ export default class NavBar extends Component {
                     padding: "1.5rem 2rem 1rem",
                     fontWeight: "500",
                     textTransform: "capitalize",
-                    height: "62px !important"
+                    height: "27px !important"
                   }}
                   switchTab={this.selectedTab}
                   activeSection={
@@ -91,12 +91,12 @@ export default class NavBar extends Component {
               </div>
               <div className="d-flex flex-row"
                 style={{
-                  "margin-top": "21px",width: "16%"
+                  marginTop: "21px",width: "16%"
                 }}
               >
-                <div><span class="header_icon mr-4"><i class="fa fa-cog" aria-hidden="true"></i></span></div>
-                <div><span class="header_icon mx-4"><i class="fa fa-bell-o" aria-hidden="true"></i></span></div>
-                <div><span class="header_icon mx-4"><i class="fa fa-user-o" aria-hidden="true"></i></span></div>
+                <div><span className="header_icon mr-4"><i className="fa fa-cog" aria-hidden="true"></i></span></div>
+                <div><span className="header_icon mx-4"><i className="fa fa-bell-o" aria-hidden="true"></i></span></div>
+                <div><span className="header_icon mx-4"><i className="fa fa-user-o" aria-hidden="true"></i></span></div>
               </div>
             </div>
           </Container>
