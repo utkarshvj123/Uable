@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NavBar from "../../component/NavBar";
 import Progress from "./Progress";
 import Welcome from "../../component/Welcome";
+import UnFriends from "../../component/UnFriends";
 
 const Container = styled.div`
   background: #8080800f;
@@ -37,6 +38,9 @@ export default class Dashboard extends Component {
             </div>
             <div className="w-25">
               <Welcome />
+            </div>
+            <div className="w-25">
+              <UnFriends/>
             </div>
           </div>
         </div>

@@ -57,8 +57,7 @@ export default class NavBar extends Component {
           <Container>
             <div className="d-flex flex-row">
               <div
-                style={{
-                  "margin-top": "21px"
+                style={{marginTop: "21px"
                 }}
               >
                 Uable
@@ -94,8 +93,7 @@ export default class NavBar extends Component {
                 />
               </div>
               <div className="d-flex justify-content-between flex-row"
-                style={{
-                  "margin-top": "21px",width: "16%"
+                style={{marginTop: "21px",width: "16%"
                 }}
               >
                 <div><span className="header_icon mr-4"><i className="fa fa-cog" aria-hidden="true"></i></span></div>
