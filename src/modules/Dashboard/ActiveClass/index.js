@@ -44,7 +44,7 @@ ActiveClass.defaultProps = {
   selectedTab: ()=>{}
 };
 ActiveClass.propTypes = {
-  tabs: [],
+  tabs: PropTypes.array,
   activeTabName: PropTypes.string,
   activeTabIndex: PropTypes.number,
   selectedTab: PropTypes.func
