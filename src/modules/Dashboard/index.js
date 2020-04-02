@@ -13,6 +13,8 @@ import Survey from "../../component/Survey";
 import TabHeaders from "../../component/TabsHeaders";
 import { findValueWithIndex } from "../../constants/global_common_functions";
 import TopContainer from "./TopContainer";
+import TabsCard from "../../component/TabsCard";
+import ActiveClass from "./ActiveClass";
 
 const Container = styled.div`
   background: #8080800f;
@@ -105,7 +107,7 @@ class Dashboard extends Component {
 
   render() {
     const {
-      progress: { progressPercentage, strokeWidth }
+      progress: { progressPercentage, strokeWidth },tabs,activeTabIndex,activeTabName
     } = this.state;
     console.log(this.props);
     return (
@@ -122,32 +124,7 @@ class Dashboard extends Component {
               <h5> Active Class</h5>
             </div>
             <div className="row">
-              <TabHeaders
-                sectionTabs={this.state.tabs}
-                mobileHeaderCss={{ fontWeight: 200 }}
-                mobileTabCss={{
-                  cursor: "pointer",
-                  textAlign: "center",
-                  opacity: 1,
-                  color: "black",
-                  padding: "1.5rem 2rem 1rem",
-                  fontWeight: "500",
-                  textTransform: "capitalize"
-                }}
-                tabCss={{
-                  cursor: "pointer",
-                  textAlign: "center",
-                  opacity: 1,
-                  color: "black",
-                  padding: "1.5rem 2rem 1rem",
-                  fontWeight: "500",
-                  textTransform: "capitalize"
-                }}
-                switchTab={this.selectedTab}
-                activeSection={
-                  this.state.activeTabName ? this.state.activeTabName : ""
-                }
-              />
+              <ActiveClass tabs={tabs} activeTabName={activeTabName} activeTabIndex={activeTabIndex} selectedTab={this.selectedTab}/>
             </div>
           </div>
         </div>
