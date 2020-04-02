@@ -12,6 +12,7 @@ import EventDashboard from "../../component/EventDashboard";
 import Survey from "../../component/Survey";
 import TabHeaders from "../../component/TabsHeaders";
 import { findValueWithIndex } from "../../constants/global_common_functions";
+import TopContainer from "./TopContainer";
 
 const Container = styled.div`
   background: #8080800f;
@@ -111,23 +112,7 @@ class Dashboard extends Component {
       <Container>
         <NavBar />
         <div style={{ padding: "5%" }}>
-          <div className="d-flex pt-5">
-            <div className="w-25">
-              <Progress
-                percentage={progressPercentage}
-                strokeWidth={strokeWidth}
-              />
-            </div>
-            <div className="w-25">
-              <Welcome />
-            </div>
-            <div className="w-25">
-              <UnFriends />
-            </div>
-            <div className="w-25">
-              <UnCompanion />
-            </div>
-          </div>
+          <TopContainer progressPercentage={progressPercentage} strokeWidth={strokeWidth}/>
           <EventDashboard />
           <div className="mb-5">
             <Survey />
